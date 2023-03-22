@@ -11,11 +11,10 @@
 		DA2383AC29C21B6B0015F153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2383AB29C21B6B0015F153 /* Assets.xcassets */; };
 		DA2383B029C21B6B0015F153 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2383AF29C21B6B0015F153 /* Preview Assets.xcassets */; };
 		DADF91B829C68648005737F2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91B729C68648005737F2 /* Colors.swift */; };
-		DADF91BC29C69B3D005737F2 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91BB29C69B3D005737F2 /* CircleButtonView.swift */; };
+		DADF91BC29C69B3D005737F2 /* CustomCircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91BB29C69B3D005737F2 /* CustomCircleButtonView.swift */; };
 		DADF91C229C6A494005737F2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91C129C6A494005737F2 /* HomeView.swift */; };
-		DADF91C429C6D11C005737F2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91C329C6D11C005737F2 /* HeaderView.swift */; };
+		DADF91C429C6D11C005737F2 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91C329C6D11C005737F2 /* CustomHeaderView.swift */; };
 		DADF91D529C7ACF2005737F2 /* ChartsSliptScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91D429C7ACF2005737F2 /* ChartsSliptScreenView.swift */; };
-		DADF91D729C7AD05005737F2 /* ChartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91D629C7AD05005737F2 /* ChartsViewModel.swift */; };
 		DADF91DB29C7CBEB005737F2 /* ChartsTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91DA29C7CBEB005737F2 /* ChartsTabBarView.swift */; };
 		DADF91DD29C7DAD0005737F2 /* ChartsTabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91DC29C7DAD0005737F2 /* ChartsTabBarItems.swift */; };
 		DADF91DF29C7E436005737F2 /* ChartsTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91DE29C7E436005737F2 /* ChartsTabBarContainerView.swift */; };
@@ -26,6 +25,15 @@
 		DADF91F329C84286005737F2 /* CustomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91F229C84286005737F2 /* CustomTabBarItem.swift */; };
 		DADF91F529C8429D005737F2 /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91F429C8429D005737F2 /* CustomTabBarContainerView.swift */; };
 		DADF91F729C842B0005737F2 /* CustomTabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91F629C842B0005737F2 /* CustomTabBarItemsPreferenceKey.swift */; };
+		DADF91F929C8FBF7005737F2 /* TestingCustomTabPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91F829C8FBF7005737F2 /* TestingCustomTabPageView.swift */; };
+		DADF91FB29C903F8005737F2 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91FA29C903F8005737F2 /* PantryView.swift */; };
+		DADF91FD29C90405005737F2 /* ShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91FC29C90405005737F2 /* ShoppingListView.swift */; };
+		DADF91FF29C90417005737F2 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF91FE29C90417005737F2 /* HistoryView.swift */; };
+		DADF920429C92C11005737F2 /* ShoppingListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF920329C92C11005737F2 /* ShoppingListItemModel.swift */; };
+		DADF920629C97A73005737F2 /* ShoppingListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF920529C97A73005737F2 /* ShoppingListRowView.swift */; };
+		DADF920829CA0329005737F2 /* ShoppingListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF920729CA0329005737F2 /* ShoppingListItemView.swift */; };
+		DADF920A29CA033A005737F2 /* ShoppingListItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF920929CA033A005737F2 /* ShoppingListItemRowView.swift */; };
+		DADF920C29CA6915005737F2 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF920B29CA6915005737F2 /* TestingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +43,10 @@
 		DA2383AD29C21B6B0015F153 /* groceryCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = groceryCalculator.entitlements; sourceTree = "<group>"; };
 		DA2383AF29C21B6B0015F153 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DADF91B729C68648005737F2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		DADF91BB29C69B3D005737F2 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		DADF91BB29C69B3D005737F2 /* CustomCircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircleButtonView.swift; sourceTree = "<group>"; };
 		DADF91C129C6A494005737F2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		DADF91C329C6D11C005737F2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		DADF91C329C6D11C005737F2 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		DADF91D429C7ACF2005737F2 /* ChartsSliptScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsSliptScreenView.swift; sourceTree = "<group>"; };
-		DADF91D629C7AD05005737F2 /* ChartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewModel.swift; sourceTree = "<group>"; };
 		DADF91DA29C7CBEB005737F2 /* ChartsTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsTabBarView.swift; sourceTree = "<group>"; };
 		DADF91DC29C7DAD0005737F2 /* ChartsTabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsTabBarItems.swift; sourceTree = "<group>"; };
 		DADF91DE29C7E436005737F2 /* ChartsTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsTabBarContainerView.swift; sourceTree = "<group>"; };
@@ -50,6 +57,15 @@
 		DADF91F229C84286005737F2 /* CustomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarItem.swift; sourceTree = "<group>"; };
 		DADF91F429C8429D005737F2 /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 		DADF91F629C842B0005737F2 /* CustomTabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		DADF91F829C8FBF7005737F2 /* TestingCustomTabPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingCustomTabPageView.swift; sourceTree = "<group>"; };
+		DADF91FA29C903F8005737F2 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
+		DADF91FC29C90405005737F2 /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
+		DADF91FE29C90417005737F2 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		DADF920329C92C11005737F2 /* ShoppingListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemModel.swift; sourceTree = "<group>"; };
+		DADF920529C97A73005737F2 /* ShoppingListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRowView.swift; sourceTree = "<group>"; };
+		DADF920729CA0329005737F2 /* ShoppingListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemView.swift; sourceTree = "<group>"; };
+		DADF920929CA033A005737F2 /* ShoppingListItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemRowView.swift; sourceTree = "<group>"; };
+		DADF920B29CA6915005737F2 /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				DA2383A729C21B6A0015F153 /* groceryCalculatorApp.swift */,
+				DADF920B29CA6915005737F2 /* TestingView.swift */,
 				DADF91B929C69B02005737F2 /* Core */,
 				DADF91B629C68631005737F2 /* Extension */,
 				DA2383AB29C21B6B0015F153 /* Assets.xcassets */,
@@ -103,8 +120,6 @@
 		DADF91B629C68631005737F2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				DADF91EF29C841E6005737F2 /* CustomTabBar */,
-				DADF91D129C7ACCC005737F2 /* Charts */,
 				DADF91B729C68648005737F2 /* Colors.swift */,
 			);
 			path = Extension;
@@ -126,8 +141,10 @@
 		DADF91BA29C69B0F005737F2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DADF91BB29C69B3D005737F2 /* CircleButtonView.swift */,
-				DADF91C329C6D11C005737F2 /* HeaderView.swift */,
+				DADF91EF29C841E6005737F2 /* CustomTabBar */,
+				DADF91D129C7ACCC005737F2 /* Charts */,
+				DADF91BB29C69B3D005737F2 /* CustomCircleButtonView.swift */,
+				DADF91C329C6D11C005737F2 /* CustomHeaderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -168,6 +185,7 @@
 		DADF91C629C6D23F005737F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DADF91FA29C903F8005737F2 /* PantryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +224,7 @@
 		DADF91CB29C6D2A3005737F2 /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				DADF920229C92BF0005737F2 /* Model */,
 				DADF91CF29C6D497005737F2 /* ViewModels */,
 				DADF91D029C6D4A3005737F2 /* Views */,
 			);
@@ -215,6 +234,7 @@
 		DADF91CC29C6D2AD005737F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DADF91FE29C90417005737F2 /* HistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +265,10 @@
 		DADF91D029C6D4A3005737F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DADF91FC29C90405005737F2 /* ShoppingListView.swift */,
+				DADF920529C97A73005737F2 /* ShoppingListRowView.swift */,
+				DADF920729CA0329005737F2 /* ShoppingListItemView.swift */,
+				DADF920929CA033A005737F2 /* ShoppingListItemRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,7 +298,6 @@
 		DADF91D329C7ACDE005737F2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				DADF91D629C7AD05005737F2 /* ChartsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -286,8 +309,17 @@
 				DADF91F229C84286005737F2 /* CustomTabBarItem.swift */,
 				DADF91F429C8429D005737F2 /* CustomTabBarContainerView.swift */,
 				DADF91F629C842B0005737F2 /* CustomTabBarItemsPreferenceKey.swift */,
+				DADF91F829C8FBF7005737F2 /* TestingCustomTabPageView.swift */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		DADF920229C92BF0005737F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DADF920329C92C11005737F2 /* ShoppingListItemModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,22 +392,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DADF91C429C6D11C005737F2 /* HeaderView.swift in Sources */,
+				DADF91C429C6D11C005737F2 /* CustomHeaderView.swift in Sources */,
+				DADF920C29CA6915005737F2 /* TestingView.swift in Sources */,
 				DADF91E329C7F159005737F2 /* ChartsView.swift in Sources */,
 				DADF91F129C841FE005737F2 /* CustomTabBarView.swift in Sources */,
 				DADF91B829C68648005737F2 /* Colors.swift in Sources */,
+				DADF920629C97A73005737F2 /* ShoppingListRowView.swift in Sources */,
 				DADF91EE29C83DAF005737F2 /* ExpensesView.swift in Sources */,
 				DADF91E129C7EAF7005737F2 /* ChartsTabBarItemsPreferenceKey.swift in Sources */,
+				DADF920829CA0329005737F2 /* ShoppingListItemView.swift in Sources */,
+				DADF91FB29C903F8005737F2 /* PantryView.swift in Sources */,
 				DADF91DB29C7CBEB005737F2 /* ChartsTabBarView.swift in Sources */,
 				DADF91DF29C7E436005737F2 /* ChartsTabBarContainerView.swift in Sources */,
 				DADF91DD29C7DAD0005737F2 /* ChartsTabBarItems.swift in Sources */,
+				DADF91F929C8FBF7005737F2 /* TestingCustomTabPageView.swift in Sources */,
+				DADF920429C92C11005737F2 /* ShoppingListItemModel.swift in Sources */,
 				DADF91C229C6A494005737F2 /* HomeView.swift in Sources */,
-				DADF91BC29C69B3D005737F2 /* CircleButtonView.swift in Sources */,
+				DADF91BC29C69B3D005737F2 /* CustomCircleButtonView.swift in Sources */,
 				DADF91F729C842B0005737F2 /* CustomTabBarItemsPreferenceKey.swift in Sources */,
-				DADF91D729C7AD05005737F2 /* ChartsViewModel.swift in Sources */,
+				DADF91FD29C90405005737F2 /* ShoppingListView.swift in Sources */,
 				DA2383A829C21B6A0015F153 /* groceryCalculatorApp.swift in Sources */,
 				DADF91F329C84286005737F2 /* CustomTabBarItem.swift in Sources */,
+				DADF91FF29C90417005737F2 /* HistoryView.swift in Sources */,
 				DADF91D529C7ACF2005737F2 /* ChartsSliptScreenView.swift in Sources */,
+				DADF920A29CA033A005737F2 /* ShoppingListItemRowView.swift in Sources */,
 				DADF91F529C8429D005737F2 /* CustomTabBarContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

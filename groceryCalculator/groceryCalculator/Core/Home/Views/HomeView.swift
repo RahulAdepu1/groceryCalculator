@@ -14,37 +14,40 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            // Background Layer
-            //            Color.theme.backgroundPrimaryColor
-            //                .ignoresSafeArea()
             
+            // Background Layer
+            Color.theme.backgroundPrimaryColor
+                .ignoresSafeArea()
+
             // Content Layer
             VStack(spacing:0) {
-                HeaderView(leftIconName: "line.3.horizontal", rightIconName: "plus")
-                Spacer(minLength: 0)
+
+                // Custom Header View
+//                CustomHeaderView(titleName: "Title", leftIconName: "line.3.horizontal", rightIconName: "plus")
+//                Divider()
+//                Spacer()
+
+//                // Custom Tab Bar with its respective Content View
                 CustomTabBarContainerView(selection: $selectedCustomTab) {
-                    Color.red
+                    PantryView()
                         .customTabBarItem(tab: .pantry, selection: $selectedCustomTab)
-                    Color.white
+                    ShoppingListView()
                         .customTabBarItem(tab: .shopList, selection: $selectedCustomTab)
                     ExpensesView()
-                        .frame(width: 200, height: 200)
                         .customTabBarItem(tab: .expenses, selection: $selectedCustomTab)
-                    Color.green
+                    HistoryView()
                         .customTabBarItem(tab: .history, selection: $selectedCustomTab)
                 }
-                Spacer(minLength: 0)
             }
-            .background(Color.theme.tempColor)
         }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        NavigationStack {
             HomeView()
-                .toolbar(.hidden, for: .navigationBar)
+                .toolbar(.hidden)
         }
     }
 }

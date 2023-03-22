@@ -20,6 +20,8 @@ struct ExpensesView: View {
             ChartsSliptScreenView(chartsTitle: "By Store")
             ChartsSliptScreenView(chartsTitle: "Average")
         }
+//        .background(Color.red)
+        .foregroundColor(.gray)
         .tabViewStyle(.page(indexDisplayMode: .always))
         
     }

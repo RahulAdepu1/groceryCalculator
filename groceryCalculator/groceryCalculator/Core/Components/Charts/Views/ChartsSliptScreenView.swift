@@ -17,26 +17,26 @@ struct ChartsSliptScreenView: View {
             Text(chartsTitle)
                 .font(.title)
                 .fontWeight(.heavy)
-                .padding(.bottom,30)
+                .padding(.bottom,10)
             Text("Consumed Expense")
                 .font(.headline)
                 .fontWeight(.semibold)
-                .padding(.vertical, 10)
+                .padding(.bottom, 5)
             ChartsView()
                 .frame(width: .infinity, height: 250)
                 .cornerRadius(10)
                 .padding(.horizontal, 20)
                 
-
             Text("Shopping Expense")
                 .font(.headline)
                 .fontWeight(.semibold)
-                .padding(.top, 20)
-                .padding(.bottom, 10)
+                .padding(.top, 10)
+                .padding(.bottom, 5)
             ChartsView()
                 .frame(width: .infinity, height: 250)
                 .cornerRadius(10)
                 .padding(.horizontal, 20)
+            Spacer()
         }
     }
 }

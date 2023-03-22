@@ -19,11 +19,18 @@ struct CustomTabBarContainerView<Content:View>: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            content
-                .ignoresSafeArea()
+        VStack(spacing:0) {
+            ZStack{
+                content
+            }
             CustomTabBarView(tabs: tabs, selectedCustomTab: $selectedCustomTab, localSelection: selectedCustomTab)
+//                .padding(.top, -10)
         }
+//        ZStack(alignment: .bottom) {
+//            content
+//                .ignoresSafeArea()
+//            CustomTabBarView(tabs: tabs, selectedCustomTab: $selectedCustomTab, localSelection: selectedCustomTab)
+//        }
         .onPreferenceChange(CustomTabBarItemsPreferenceKey.self, perform: { value in
             self.tabs = value
         })

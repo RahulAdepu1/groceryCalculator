@@ -11,9 +11,9 @@ import SwiftUI
 struct groceryCalculatorApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+            NavigationStack {
                 HomeView()
-                    .toolbar(.hidden, for: .navigationBar)
+                    .toolbar(.hidden)
             }
         }
     }
