@@ -21,23 +21,26 @@ struct CustomHeaderView<LeftButtonDestination: View, RightButtonDestination: Vie
                 .fontWeight(.heavy)
                 .foregroundColor(Color.theme.tempColor)
                 .frame(minWidth: 0, maxWidth: .infinity)
-            HStack {
-                if let leftButtonDestination = leftButtonDestination {
-                    CustomCircleButtonView(
-                        image: leftButtonImage ?? Image(systemName: "chevron.left"),
-                        destination: leftButtonDestination
-                    )
-                }
-                Spacer()
+            VStack {
+                HStack {
+                    if let leftButtonDestination = leftButtonDestination {
+                        CustomCircleButtonView(
+                            image: leftButtonImage ?? Image(systemName: "chevron.left"),
+                            destination: leftButtonDestination
+                        )
+                    }
+                    Spacer()
 
-                if let rightButtonDestination = rightButtonDestination {
-                    CustomCircleButtonView(
-                        image: rightButtonImage ?? Image(systemName: "plus"),
-                        destination: rightButtonDestination
-                    )
+                    if let rightButtonDestination = rightButtonDestination {
+                        CustomCircleButtonView(
+                            image: rightButtonImage ?? Image(systemName: "plus"),
+                            destination: rightButtonDestination
+                        )
+                    }
                 }
+                .padding(.horizontal, 20)
+                Divider()
             }
-            .padding(.horizontal, 20)
         }
     }
 }
@@ -64,10 +67,9 @@ extension CustomHeaderView where LeftButtonDestination == Never, RightButtonDest
     }
 }
 
-
 struct HeaderView_Previews: PreviewProvider {
     
     static var previews: some View {
-        CustomHeaderView(title: "title")
+        CustomHeaderView(title: "Title", leftButtonImage: Image(systemName: "line.3.horizontal"), leftButtonDestination: View1(), rightButtonImage: Image(systemName: "plus"), rightButtonDestination: View1())
     }
 }

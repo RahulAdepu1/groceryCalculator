@@ -16,8 +16,9 @@ extension Color {
 
 struct ColorTheme {
     let tempColor = Color(.black)
-    let textPrimaryColor = Color(.white)
-    let textSecondaryColor = Color(.black)
-    let backgroundPrimaryColor = Color(.white)
-    let backgroundSecondaryColor = Color(.gray)
+    let buttonAction = Color("buttonAction")
+    let textPrimaryColor = Color("textPrimary")
+    let textSecondaryColor = Color("textSecondary")
+    let backgroundPrimaryColor = Color("backgroundPrimary")
+    let backgroundSecondaryColor = Color("backgroundSecondary")
 }

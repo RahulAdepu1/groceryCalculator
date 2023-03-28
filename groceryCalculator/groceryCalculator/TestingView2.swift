@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct TestingView2: View {
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            List{
+                Section(header: Text("Section 1")) {
+                    Text("Hello")
+                }
+            }
+        }
     }
 }
 

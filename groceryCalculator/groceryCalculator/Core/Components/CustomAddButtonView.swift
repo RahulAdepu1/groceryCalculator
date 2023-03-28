@@ -9,7 +9,15 @@ import SwiftUI
 
 struct CustomAddButtonView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(systemName: "plus")
+            .font(.headline)
+            .foregroundColor(Color.black)
+            .frame(width: 50, height: 50)
+            .background(
+                Circle()
+                    .foregroundColor(Color.white)
+            )
+            .shadow(color: Color.black.opacity(0.2), radius: 10)
     }
 }
 

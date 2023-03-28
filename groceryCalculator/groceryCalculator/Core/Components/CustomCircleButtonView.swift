@@ -23,9 +23,7 @@ struct CustomCircleButtonView<Destination:View>: View {
                         Circle()
                             .foregroundColor(Color.white)
                     )
-                    .shadow(
-                        color: Color.theme.tempColor.opacity(0.25),
-                        radius: 10) }
+                    .shadow(color: Color.theme.tempColor.opacity(0.25), radius: 10) }
         )
     }
 }
