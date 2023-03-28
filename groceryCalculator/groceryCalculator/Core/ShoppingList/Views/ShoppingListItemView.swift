@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ShoppingListItemView: View {
     
+    @EnvironmentObject var coreDataVM: CoreDataViewModel
     @EnvironmentObject var shoppingListItemVM: ShoppingListItemViewModel
     
     var stillLookingItems: [Binding<ShoppingListItemModel>] {
@@ -84,6 +85,7 @@ struct ShoppingListItemView_Previews: PreviewProvider {
         }
         .environmentObject(ShoppingListItemViewModel())
         .environmentObject(ShoppingListNameViewModel())
+        .environmentObject(CoreDataViewModel())
     }
 }
 

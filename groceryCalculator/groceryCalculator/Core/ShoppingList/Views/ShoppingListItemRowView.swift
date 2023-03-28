@@ -10,6 +10,9 @@ import SwiftUI
 struct ShoppingListItemRowView: View {
     
     @EnvironmentObject var shoppingListItemVM: ShoppingListItemViewModel
+    
+//    let listItemEntity: ListItemEntity
+    
     var shoppingListItem: ShoppingListItemModel
     @State var showSheet: Bool = false
     
@@ -27,7 +30,9 @@ struct ShoppingListItemRowView: View {
             VStack(alignment:.leading) {
                 HStack {
                     Text(shoppingListItem.itemName)
+//                    Text(listItemEntity.listItemName ?? "")
                     Text("- "+shoppingListItem.itemBrandName)
+//                    Text("- "+(listItemEntity.listItemBrandName ??  ""))
                 }
                 .font(.title2)
                 
@@ -59,6 +64,7 @@ struct ShoppingListItemRowView_Previews: PreviewProvider {
         }
         .environmentObject(ShoppingListItemViewModel())
         .environmentObject(ShoppingListNameViewModel())
+        .environmentObject(CoreDataViewModel())
     }
 }
 

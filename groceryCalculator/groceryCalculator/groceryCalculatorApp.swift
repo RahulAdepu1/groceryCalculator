@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct groceryCalculatorApp: App {
     
+    @StateObject var coreDataViewModel: CoreDataViewModel = CoreDataViewModel()
+    
     @StateObject var shoppingListItem: ShoppingListItemViewModel = ShoppingListItemViewModel()
     @StateObject var shoppingListName: ShoppingListNameViewModel = ShoppingListNameViewModel()
     
@@ -21,6 +23,7 @@ struct groceryCalculatorApp: App {
             }
             .environmentObject(shoppingListItem)
             .environmentObject(shoppingListName)
+            .environmentObject(coreDataViewModel)
         }
     }
 }

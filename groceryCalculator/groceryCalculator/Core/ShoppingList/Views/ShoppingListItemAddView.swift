@@ -10,6 +10,8 @@ import SwiftUI
 struct ShoppingListItemAddView: View {
 
     @Environment(\.dismiss) var dismiss
+    
+    @EnvironmentObject var coreDataVM: CoreDataViewModel
     @EnvironmentObject var shoppingListItemVM: ShoppingListItemViewModel
     
     @State var textFieldItemName: String = ""
@@ -23,7 +25,8 @@ struct ShoppingListItemAddView: View {
             VStack() {
                 CustomTextField(placeholderText: "Item Name", text: $textFieldItemName, keyboardType: .default)
                 CustomTextField(placeholderText: "Brand Name", text: $textFieldItemBrandName, keyboardType: .default)
-                Button(action: saveButtonPressed, label: {
+                Button(action: saveButtonPressed,
+                       label: {
                     Text("Add Value")
                         .font(.headline)
                         .foregroundColor(Color.theme.textPrimaryColor)
@@ -33,8 +36,10 @@ struct ShoppingListItemAddView: View {
                         .cornerRadius(10)
                         .shadow(radius: 10, x: 5, y: 5)
                 })
-                .opacity((textFieldItemName.count<2 || textFieldItemBrandName.count<2) ? 0.5 : 1.0)
-                .disabled(textFieldItemName.count<2 || textFieldItemBrandName.count<2)
+//                .opacity((textFieldItemName.count<2 || textFieldItemBrandName.count<2) ? 0.5 : 1.0)
+//                .disabled(textFieldItemName.count<2 || textFieldItemBrandName.count<2)
+                .opacity((textFieldItemName.count<2) ? 0.5 : 1.0)
+                .disabled(textFieldItemName.count<2)
             }
             .font(.headline)
             .padding(15)
@@ -44,7 +49,9 @@ struct ShoppingListItemAddView: View {
     
     func saveButtonPressed(){
         shoppingListItemVM.addItems(itemName: textFieldItemName, itemBrandName: textFieldItemBrandName, itemCount: 1)
+        coreDataVM.addListItems(inputItemName: textFieldItemName, inputItemBrandName: textFieldItemBrandName)
         dismiss()
+        
     }
     
 }
@@ -58,11 +65,14 @@ struct ShoppingListItemAddView_Previews: PreviewProvider {
         }
         .environmentObject(ShoppingListItemViewModel())
         .environmentObject(ShoppingListNameViewModel())
+        .environmentObject(CoreDataViewModel())
     }
 }
 
 
 struct CustomTextField: View {
+    
+    
     
     @State private var offset: CGFloat = 1
     @State private var scaleEffect: CGFloat = 0
