@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ListEntity" representedClassName="ListEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="listName" optional="YES" attributeType="String"/>
+        <relationship name="listItemEntity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ListItemEntity"/>
+    </entity>
+    <entity name="ListItemEntity" representedClassName="ListItemEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="isFound" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isLooking" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="itemBrandName" optional="YES" attributeType="String"/>
+        <attribute name="itemCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PantryEntity" representedClassName="PantryEntity" syncable="YES" codeGenerationType="class"/>
+</model>
