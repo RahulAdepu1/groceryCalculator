@@ -9,34 +9,28 @@ import SwiftUI
 
 struct ShoppingListItemRowView: View {
     
-    @EnvironmentObject var shoppingListItemVM: ShoppingListItemViewModel
-    
-//    let listItemEntity: ListItemEntity
-    
-    var shoppingListItem: ShoppingListItemModel
+    @EnvironmentObject var coreDataVM: CoreDataViewModel
+    @Binding var listItemsCoreData: ListItemEntity
     @State var showSheet: Bool = false
     
     var body: some View{
         HStack(){
-            Image(systemName: shoppingListItem.isLooking ? ( shoppingListItem.isFound ? "checkmark.circle" : "multiply.circle" ) :"circle")
+            Image(systemName: listItemsCoreData.isLooking ? ( listItemsCoreData.isFound ? "checkmark.circle" : "multiply.circle" ) :"circle")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 30, height: 30)
-                .foregroundColor(shoppingListItem.isLooking ? ( shoppingListItem.isFound ? Color.green : Color.red ) : Color.theme.textPrimaryColor)
+                .foregroundColor(listItemsCoreData.isLooking ? ( listItemsCoreData.isFound ? Color.green : Color.red ) : Color.theme.textPrimaryColor)
                 .padding(.leading, 15)
                 .onTapGesture {
                     showSheet.toggle()
                 }
             VStack(alignment:.leading) {
                 HStack {
-                    Text(shoppingListItem.itemName)
-//                    Text(listItemEntity.listItemName ?? "")
-                    Text("- "+shoppingListItem.itemBrandName)
-//                    Text("- "+(listItemEntity.listItemBrandName ??  ""))
+                    Text(listItemsCoreData.listItemName ?? "")
                 }
                 .font(.title2)
                 
-                Text("Qty: \(shoppingListItem.itemCount)")
+                Text("Qty: \(listItemsCoreData.listItemCount)")
                     .font(.body)
             }
             .padding(.leading, 10)
@@ -49,36 +43,37 @@ struct ShoppingListItemRowView: View {
         .cornerRadius(10)
         
         .sheet(isPresented: $showSheet) {
-            SheetShowView(shoppingListItem: shoppingListItem)
+            SheetShowView(listItemsCoreData: listItemsCoreData)
         .presentationDetents([.height(200)])
         }
     }
 }
 
-//MARK: - Preview
-struct ShoppingListItemRowView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        NavigationStack{
-            ShoppingListItemRowView(shoppingListItem: dev.shoppingListItem)
-        }
-        .environmentObject(ShoppingListItemViewModel())
-        .environmentObject(ShoppingListNameViewModel())
-        .environmentObject(CoreDataViewModel())
-    }
-}
+////MARK: - Preview
+//struct ShoppingListItemRowView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        NavigationStack{
+//            ShoppingListItemRowView(listItemsCoreData: ListItemEntity())
+//        }
+//        .environmentObject(ShoppingListItemViewModel())
+//        .environmentObject(ShoppingListNameViewModel())
+//        .environmentObject(CoreDataViewModel())
+//    }
+//}
 
 //MARK: - Sheet Show View
 struct SheetShowView: View {
     
-    @EnvironmentObject var shoppingListItemVM: ShoppingListItemViewModel
-    var shoppingListItem: ShoppingListItemModel
+    @EnvironmentObject var coreDataVM: CoreDataViewModel
+    let listItemsCoreData: ListItemEntity
+
     @Environment (\.dismiss) private var dismiss
     
     var body: some View{
         VStack{
             Button {
-                shoppingListItemVM.updateIsLooking(shoppingListItem: shoppingListItem)
+                coreDataVM.updateIsLooking(listItemsCoreData: listItemsCoreData)
                 dismiss()
             } label: {
                 Text("Still Looking")
@@ -88,7 +83,7 @@ struct SheetShowView: View {
             .foregroundColor(.black)
 
             Button {
-                shoppingListItemVM.updateIsFound(shoppingListItem: shoppingListItem)
+                coreDataVM.updateIsFound(listItemsCoreData: listItemsCoreData)
                 dismiss()
             } label: {
                 Text("Found")
@@ -98,7 +93,7 @@ struct SheetShowView: View {
             .foregroundColor(.black)
             
             Button {
-                shoppingListItemVM.updateIsNotFound(shoppingListItem: shoppingListItem)
+                coreDataVM.updateIsNotFound(listItemsCoreData: listItemsCoreData)
                 dismiss()
             } label: {
                 Text("Not Found")

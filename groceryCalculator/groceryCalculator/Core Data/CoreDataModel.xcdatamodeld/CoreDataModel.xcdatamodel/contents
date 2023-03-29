@@ -9,10 +9,10 @@
         <attribute name="isFound" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isLooking" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="listItemBrandName" optional="YES" attributeType="String"/>
-        <attribute name="listItemCost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="listItemCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="listItemCost" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="listItemCount" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="listItemName" optional="YES" attributeType="String"/>
-        <attribute name="listItemWtQty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="listItemWtQty" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="listNames" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListEntity" inverseName="listItems" inverseEntity="ListEntity"/>
     </entity>
     <entity name="PantryEntity" representedClassName="PantryEntity" syncable="YES" codeGenerationType="class">

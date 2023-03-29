@@ -35,8 +35,8 @@ class ShoppingListItemViewModel: ObservableObject {
         shoppingListItems.move(fromOffsets: from, toOffset: to)
     }
     
-    func addItems(itemName: String, itemBrandName: String, itemCount: Int){
-        let newListItem = ShoppingListItemModel(itemName: itemName, itemBrandName: itemBrandName, itemCount: 1, isLooking: false, isFound: false)
+    func addItems(itemName: String, itemCount: Int = 1){
+        let newListItem = ShoppingListItemModel(itemName: itemName, itemBrandName: "", itemCount: itemCount, isLooking: false, isFound: false)
         shoppingListItems.append(newListItem)
     }
     

@@ -10,49 +10,73 @@ import SwiftUI
 struct ShoppingListItemView: View {
     
     @EnvironmentObject var coreDataVM: CoreDataViewModel
-    @EnvironmentObject var shoppingListItemVM: ShoppingListItemViewModel
     
-    var stillLookingItems: [Binding<ShoppingListItemModel>] {
-        $shoppingListItemVM.shoppingListItems.filter { !$0.isLooking.wrappedValue && !$0.isFound.wrappedValue }
+    var stillLookingItems: [Binding<ListItemEntity>] {
+        $coreDataVM.listItemsCoreData.filter { !$0.isLooking.wrappedValue && !$0.isFound.wrappedValue }
     }
-    var foundItems: [Binding<ShoppingListItemModel>] {
-        $shoppingListItemVM.shoppingListItems.filter { $0.isLooking.wrappedValue && $0.isFound.wrappedValue }
+    var foundItems: [Binding<ListItemEntity>] {
+        $coreDataVM.listItemsCoreData.filter { $0.isLooking.wrappedValue && $0.isFound.wrappedValue }
     }
-    var notFoundItems: [Binding<ShoppingListItemModel>] {
-        $shoppingListItemVM.shoppingListItems.filter { $0.isLooking.wrappedValue && !$0.isFound.wrappedValue }
+    var notFoundItems: [Binding<ListItemEntity>] {
+        $coreDataVM.listItemsCoreData.filter { $0.isLooking.wrappedValue && !$0.isFound.wrappedValue }
     }
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            
-            //List of items in the Shopping List Name
-            List {
-                let stillLookingItems = stillLookingItems
-                ForEach(stillLookingItems) { $item in
-                    ShoppingListItemRowView( shoppingListItem: item)
-                        .listRowBackground(Color.theme.backgroundPrimaryColor)
-                        .listRowSeparator(.hidden)
-                        
+            Form {
+                Section{
+                    if stillLookingItems.isEmpty {
+                        Text("Nothing left to look for")
+                    }else {
+                        ForEach(stillLookingItems) { $item in
+                            ShoppingListItemRowView(listItemsCoreData: $item)
+                                .listRowBackground(Color.theme.backgroundPrimaryColor)
+                                .listRowSeparator(.hidden)
+                        }
+                        .onDelete(perform: coreDataVM.deleteListItem)
+                    }
+                } header: {
+                    Text("Still Looking")
                 }
-                .onMove(perform: shoppingListItemVM.moveListItems)
-                .onDelete(perform: shoppingListItemVM.deleteListItems)
                 
-                let foundItems = foundItems
-                ForEach(foundItems) { $item in
-                    ShoppingListItemRowView( shoppingListItem: item)
+                Section{
+                    if foundItems.isEmpty {
+                        Text("Did not find anything yet?")
+                    }else {
+                        ForEach(foundItems) { $item in
+                            ShoppingListItemRowView(listItemsCoreData: $item)
+                                .listRowBackground(Color.theme.backgroundPrimaryColor)
+                                .listRowSeparator(.hidden)
+                        }
+                        .onDelete(perform: coreDataVM.deleteListItem)
+                    }
+                } header: {
+                    Text("Items Found")
                 }
-                .onMove(perform: shoppingListItemVM.moveListItems)
-                .onDelete(perform: shoppingListItemVM.deleteListItems)
                 
-                let notFoundItems = notFoundItems
-                ForEach(notFoundItems) { $item in
-                    ShoppingListItemRowView( shoppingListItem: item)
+                Section {
+                    if notFoundItems.isEmpty {
+                        Text("All Items are available!!!")
+                    }else {
+                        ForEach(notFoundItems) { $item in
+                            ShoppingListItemRowView(listItemsCoreData: $item)
+                                .listRowBackground(Color.theme.backgroundPrimaryColor)
+                                .listRowSeparator(.hidden)
+                        }
+                        .onDelete(perform: coreDataVM.deleteListItem)
+                    }
+                } header: {
+                    Text("Items Not Found")
                 }
-                .onMove(perform: shoppingListItemVM.moveListItems)
-                .onDelete(perform: shoppingListItemVM.deleteListItems)
             }
-            //Style of the list
+//            Style of the list
             .listStyle(.plain)
+            
+            /*
+             FEATURE
+             
+             Ask user if they want to add all the "Not Found Items" in a new list
+             */
             
             
             // Button to navigate to a view to add new items to the list
