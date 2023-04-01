@@ -2,14 +2,14 @@
 //  PantryView.swift
 //  groceryCalculator
 //
-//  Created by Rahul Adepu on 3/20/23.
+//  Created by Rahul Adepu on 3/31/23.
 //
 
 import SwiftUI
 
 struct PantryView: View {
     var body: some View {
-        Text("Welcome to Pantry Page")
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
