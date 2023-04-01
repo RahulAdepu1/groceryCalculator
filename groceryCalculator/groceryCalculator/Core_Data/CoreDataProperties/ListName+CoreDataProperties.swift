@@ -20,6 +20,23 @@ extension ListName {
     @NSManaged public var listName: String?
     @NSManaged public var date: Date?
     @NSManaged public var items: NSSet?
+    
+    public var unwrappedlistName: String {
+        listName ?? "Unknown name"
+    }
+    
+    public var itemsArray: [ListItem] {
+        let itemsSet = items as? Set<ListItem> ?? []
+        
+        return itemsSet.sorted {
+            $0.unwrappeditemName < $1.unwrappeditemName
+        }
+    }
+    
+    public var myDate: Date {
+        let myDate = date ?? Date()
+        return myDate
+    }
 
 }
 

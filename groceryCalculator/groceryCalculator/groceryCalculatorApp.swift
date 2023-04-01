@@ -10,20 +10,16 @@ import SwiftUI
 @main
 struct groceryCalculatorApp: App {
     
-    @StateObject var coreDataViewModel: CoreDataViewModel = CoreDataViewModel()
-    
-    @StateObject var shoppingListItem: ShoppingListItemViewModel = ShoppingListItemViewModel()
-    @StateObject var shoppingListName: ShoppingListNameViewModel = ShoppingListNameViewModel()
+    @StateObject var listNameCoreDataVM: ListNameCoreDataVM = ListNameCoreDataVM()
+//    @StateObject var listItemCoreDataVM: ListItemCoreDataVM = ListItemCoreDataVM()
     
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ShoppingListItemView()
-//                    .toolbar(.hidden)
+                ShoppingListView()
             }
-            .environmentObject(shoppingListItem)
-            .environmentObject(shoppingListName)
-            .environmentObject(coreDataViewModel)
+            .environmentObject(listNameCoreDataVM)
+//            .environmentObject(listItemCoreDataVM)
         }
     }
 }

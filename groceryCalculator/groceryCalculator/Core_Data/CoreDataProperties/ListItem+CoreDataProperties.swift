@@ -23,6 +23,10 @@ extension ListItem {
     @NSManaged public var itemCount: Double
     @NSManaged public var listName: ListName?
 
+    public var unwrappeditemName: String {
+        itemName ?? "Unknown name"
+    }
+    
 }
 
 extension ListItem : Identifiable {

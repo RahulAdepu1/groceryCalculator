@@ -20,7 +20,7 @@ extension Pantry {
     @NSManaged public var stockedDate: Date?
     @NSManaged public var expiryDate: Date?
     @NSManaged public var consumedDate: Date?
-    @NSManaged public var count: NSDecimalNumber?
+    @NSManaged public var count: Double
     @NSManaged public var itemName: String?
     @NSManaged public var itemBrand: String?
     @NSManaged public var category: String?
