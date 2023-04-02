@@ -27,8 +27,10 @@ class CoreDataManager {
     
     func save() {
         do {
-            try context.save()
-            print("Saved sucessfully")
+            if context.hasChanges {
+                try context.save()
+                print("Saved sucessfully")
+            }
         } catch let error {
             print("Error saving Core Data. \(error.localizedDescription)")
         }
@@ -59,7 +61,7 @@ class ListNameCoreDataVM: ObservableObject {
         fetchListItems()
         fetchPantry()
         
-        stillLookingItems()
+//        stillLookingItems()
         foundItems()
         notFoundItems()
     }
@@ -132,13 +134,15 @@ class ListNameCoreDataVM: ObservableObject {
         newPantryItems.id = UUID().uuidString
         newPantryItems.itemName = itemName
         newPantryItems.itemBrand = ""
-        newPantryItems.category = ""
-        newPantryItems.location = ""
+        newPantryItems.category = "None"
+        newPantryItems.location = "Unknown"
         newPantryItems.count = itemCount
         newPantryItems.cost = 0.0
         newPantryItems.stockedDate = Date()
-        newPantryItems.expiryDate = Date()
-        newPantryItems.consumedDate = Date()
+        newPantryItems.expiryDate = Calendar.current.date(byAdding: .month, value: 1, to: Date())
+        newPantryItems.consumedDate = Calendar.current.date(byAdding: .month, value: 1, to: Date())
+        newPantryItems.consumedAmount = 0.0
+        newPantryItems.remainingAmount = 100.0
         save()
     }
 //------------------------------------------------------------------------------------------------------------------------
@@ -155,6 +159,14 @@ class ListNameCoreDataVM: ObservableObject {
         guard let index = indexSet.first else { return }
         let listItemsCoreData = listItemsCoreData[index]
         manager.context.delete(listItemsCoreData)
+        save()
+    }
+    
+    // Delete List Item
+    func deletePantryItem(indexSet: IndexSet) {
+        guard let index = indexSet.first else { return }
+        let pantryCoreData = pantryCoreData[index]
+        manager.context.delete(pantryCoreData)
         save()
     }
     
@@ -244,79 +256,8 @@ class ListNameCoreDataVM: ObservableObject {
         fetchListName()
         fetchListItems()
         fetchPantry()
+        
+        foundItems()
+        notFoundItems()
     }
-    
 }
-
-
-
-
-////MARK: - List Item Core Data View Model
-//class ListItemCoreDataVM: ObservableObject {
-//
-//    let manager = CoreDataManager.instance
-//
-//    let listItemEntity: String = "ListItem"
-//    @Published var listItemsCoreData: [ListItem] = []
-//
-//    // Initialize ListItems
-//    init() {
-//        fetchListItems()
-//    }
-//
-//    // Fetech all the List Items from core data
-//    func fetchListItems() {
-//        let requestListItems = NSFetchRequest<ListItem>(entityName: listItemEntity)
-//        do {
-//            listItemsCoreData = try manager.context.fetch(requestListItems)
-//        }catch let error {
-//            print("Error fetching. \(error.localizedDescription)")
-//        }
-//    }
-//
-////    func addListItem(inputListItem: String, listName: ListName) {
-////        let newListItem = ListItem(context: manager.context)
-////        newListItem.id = UUID().uuidString
-////        newListItem.itemName = inputListItem
-////        newListItem.itemCount = 1.0
-////        newListItem.isLooking = false
-////        newListItem.isFound = false
-////        listName.addToItems(newListItem)
-////        save()
-////    }
-//
-//    func deleteListItem(indexSet: IndexSet) {
-//        guard let index = indexSet.first else { return }
-//        let listItemsCoreData = listItemsCoreData[index]
-//        manager.context.delete(listItemsCoreData)
-//        save()
-//    }
-//
-//    func updateListItem(listItemsCoreData: ListItem, listItemName: String, inputItemCount: Double = 1.0) {
-//
-//    }
-//
-//    func updateIsLooking(listItemsCoreData: ListItem){
-//        listItemsCoreData.isLooking = false
-//        listItemsCoreData.isFound = false
-//        save()
-//    }
-//
-//    func updateIsFound(listItemsCoreData: ListItem){
-//        listItemsCoreData.isLooking = true
-//        listItemsCoreData.isFound = true
-//        save()
-//    }
-//
-//    func updateIsNotFound(listItemsCoreData: ListItem){
-//        listItemsCoreData.isLooking = true
-//        listItemsCoreData.isFound = false
-//        save()
-//    }
-//
-//    func save() {
-//        manager.save()
-//        fetchListItems()
-//    }
-//
-//}

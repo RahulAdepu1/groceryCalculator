@@ -127,6 +127,8 @@ struct AddListNameSheetShow: View {
 struct ListNameRowView: View {
     
     @State var listName: ListName
+    
+    //Date Formatter
     let dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
             formatter.dateFormat = "dd MMM yy"
@@ -142,6 +144,15 @@ struct ListNameRowView: View {
         }
     }
 }
+
+struct dateModify{
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yy"
+        return formatter
+    }()
+}
+
 
 // MARK: - List Item View
 struct ListItemView: View {
@@ -394,7 +405,7 @@ struct DoneView: View {
     
     @EnvironmentObject var listNameCoreDataVM: ListNameCoreDataVM
     @StateObject var listNameCoreData: ListName
-    
+    @Environment(\.dismiss) var dismiss
     
     var body: some View{
         ZStack {
@@ -421,6 +432,7 @@ struct DoneView: View {
                         for listItem in listNameCoreData.itemsArray {
                             listNameCoreDataVM.addPantry(itemName: listItem.unwrappeditemName, itemCount: listItem.itemCount)
                         }
+                        
                     }) {
                         Text("Add to Pantry")
                     }
@@ -478,7 +490,7 @@ struct DoneView: View {
                 .padding(.bottom, 50)
                 
                 Button {
-                    
+                    dismiss()
                 } label: {
                     Text("Done")
                 }
