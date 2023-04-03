@@ -17,7 +17,7 @@ class CoreDataManager {
     
     init() {
         container = NSPersistentContainer(name: containerName)
-        container.loadPersistentStores { NSEntityDescription, error in
+        container.loadPersistentStores { description, error in
             if let error = error {
                 print("Error loading Core Data. \(error.localizedDescription)")
             }
@@ -82,6 +82,9 @@ class ListNameCoreDataVM: ObservableObject {
     // Fetech all the List Items from core data
     func fetchListName() {
         let request = NSFetchRequest<ListName>(entityName: listNameEntity)
+        //Another way to get fetch data
+        //let request: NSFetchRequest<ListName> = ListName.fetchRequest()
+        
         do {
             listNameCoreData = try manager.context.fetch(request)
         }catch let error {
@@ -163,10 +166,15 @@ class ListNameCoreDataVM: ObservableObject {
     }
     
     // Delete List Item
-    func deletePantryItem(indexSet: IndexSet) {
-        guard let index = indexSet.first else { return }
-        let pantryCoreData = pantryCoreData[index]
-        manager.context.delete(pantryCoreData)
+//    func deletePantryItem(indexSet: IndexSet) {
+//        guard let index = indexSet.first else { return }
+//        let pantryCoreData = pantryCoreData[index]
+//        manager.context.delete(pantryCoreData)
+//        save()
+//    }
+
+    func deletePantryItem(pantry: Pantry) {
+        manager.context.delete(pantry)
         save()
     }
     
@@ -205,49 +213,49 @@ class ListNameCoreDataVM: ObservableObject {
     
 //------------------------------------------------------------------------------------------------------------------------
     // Updating Data of Items Pantry
-    func updatePantryItemName(pantryItemName: String){
-        let newPantryItems = Pantry(context: manager.context)
+    func updatePantryItemName(newPantryItems: Pantry, pantryItemName: String){
         newPantryItems.itemName = pantryItemName
+        save()
     }
     
-    func updatePantryItemBrand(pantryItemBrand: String){
-        let newPantryItems = Pantry(context: manager.context)
+    func updatePantryItemBrand(newPantryItems: Pantry, pantryItemBrand: String){
         newPantryItems.itemBrand = pantryItemBrand
+        save()
     }
     
-    func updatePantryCategory(pantryCategory: String){
-        let newPantryItems = Pantry(context: manager.context)
+    func updatePantryCategory(newPantryItems: Pantry, pantryCategory: String){
         newPantryItems.category = pantryCategory
+        save()
     }
     
-    func updatePantryLocation(pantryLocation: String){
-        let newPantryItems = Pantry(context: manager.context)
+    func updatePantryLocation(newPantryItems: Pantry, pantryLocation: String){
         newPantryItems.location = pantryLocation
+        save()
     }
     
-    func updatePantryItemCount(pantryItemCount: Double){
-        let newPantryItems = Pantry(context: manager.context)
+    func updatePantryItemCount(newPantryItems: Pantry, pantryItemCount: Double){
         newPantryItems.count = pantryItemCount
+        save()
     }
     
-    func updatePantryItemCost(pantryItemCost: Double){
-        let newPantryItems = Pantry(context: manager.context)
+    func updatePantryItemCost(newPantryItems: Pantry, pantryItemCost: Double){
         newPantryItems.cost = pantryItemCost
+        save()
     }
     
-    func updatePantryStockedDate(pantryStockedDate: Date){
-        let newPantryItems = Pantry(context: manager.context)
+    func updatePantryStockedDate(newPantryItems: Pantry, pantryStockedDate: Date){
         newPantryItems.stockedDate = pantryStockedDate
+        save()
     }
     
-    func updatePantryExpiryDate(pantryExpiryDate: Date){
-        let newPantryItems = Pantry(context: manager.context)
+    func updatePantryExpiryDate(newPantryItems: Pantry, pantryExpiryDate: Date){
         newPantryItems.expiryDate = pantryExpiryDate
+        save()
     }
     
-    func updatePantryConsumenDate(pantryConsumenDate: Date){
-        let newPantryItems = Pantry(context: manager.context)
+    func updatePantryConsumenDate(newPantryItems: Pantry, pantryConsumenDate: Date){
         newPantryItems.consumedDate = pantryConsumenDate
+        save()
     }
     
 //------------------------------------------------------------------------------------------------------------------------
@@ -255,9 +263,11 @@ class ListNameCoreDataVM: ObservableObject {
         manager.save()
         fetchListName()
         fetchListItems()
-        fetchPantry()
         
         foundItems()
         notFoundItems()
+        
+        
+        fetchPantry()
     }
 }
