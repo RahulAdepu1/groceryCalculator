@@ -2,7 +2,7 @@
 //  Pantry+CoreDataProperties.swift
 //  groceryCalculator
 //
-//  Created by Rahul Adepu on 4/1/23.
+//  Created by Rahul Adepu on 4/3/23.
 //
 //
 
@@ -17,6 +17,7 @@ extension Pantry {
     }
 
     @NSManaged public var category: String?
+    @NSManaged public var consumedAmount: Double
     @NSManaged public var consumedDate: Date?
     @NSManaged public var cost: Double
     @NSManaged public var count: Double
@@ -25,23 +26,11 @@ extension Pantry {
     @NSManaged public var itemBrand: String?
     @NSManaged public var itemName: String?
     @NSManaged public var location: String?
-    @NSManaged public var stockedDate: Date?
-    @NSManaged public var consumedAmount: Double
     @NSManaged public var remainingAmount: Double
-    
-    public var unwrappedConsumedDate: Date {
-        let date = consumedDate ?? Date()
-        return date
-    }
-    public var unwrappedExpiryDate: Date {
-        let date = expiryDate ?? Date()
-        return date
-    }
-    public var unwrappedStockedDate: Date {
-        let date = stockedDate ?? Date()
-        return date
-    }
-    
+    @NSManaged public var stockedDate: Date?
+    @NSManaged public var storeName: String?
+    @NSManaged public var purchaseType: String?
+
 }
 
 extension Pantry : Identifiable {
