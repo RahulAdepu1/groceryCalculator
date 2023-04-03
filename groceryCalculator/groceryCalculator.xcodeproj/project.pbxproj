@@ -18,8 +18,14 @@
 		DA37525529D67EB9003DDD8D /* ListName+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37525129D67EB9003DDD8D /* ListName+CoreDataClass.swift */; };
 		DA37525629D67EB9003DDD8D /* ListName+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37525229D67EB9003DDD8D /* ListName+CoreDataProperties.swift */; };
 		DA37525E29D7A1D8003DDD8D /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37525D29D7A1D8003DDD8D /* PantryView.swift */; };
-		DA37526129D88407003DDD8D /* Pantry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37525F29D88407003DDD8D /* Pantry+CoreDataClass.swift */; };
-		DA37526229D88407003DDD8D /* Pantry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37526029D88407003DDD8D /* Pantry+CoreDataProperties.swift */; };
+		DA37528A29DB453D003DDD8D /* Pantry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37528829DB453D003DDD8D /* Pantry+CoreDataClass.swift */; };
+		DA37528B29DB453D003DDD8D /* Pantry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37528929DB453D003DDD8D /* Pantry+CoreDataProperties.swift */; };
+		DA37529529DB4620003DDD8D /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37528F29DB4620003DDD8D /* History+CoreDataClass.swift */; };
+		DA37529629DB4620003DDD8D /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37529029DB4620003DDD8D /* History+CoreDataProperties.swift */; };
+		DA37529729DB4620003DDD8D /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37529129DB4620003DDD8D /* Category+CoreDataClass.swift */; };
+		DA37529829DB4620003DDD8D /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37529229DB4620003DDD8D /* Category+CoreDataProperties.swift */; };
+		DA37529929DB4620003DDD8D /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37529329DB4620003DDD8D /* Location+CoreDataClass.swift */; };
+		DA37529A29DB4620003DDD8D /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37529429DB4620003DDD8D /* Location+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +42,14 @@
 		DA37525129D67EB9003DDD8D /* ListName+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListName+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DA37525229D67EB9003DDD8D /* ListName+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListName+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA37525D29D7A1D8003DDD8D /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
-		DA37525F29D88407003DDD8D /* Pantry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pantry+CoreDataClass.swift"; sourceTree = "<group>"; };
-		DA37526029D88407003DDD8D /* Pantry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pantry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DA37528829DB453D003DDD8D /* Pantry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pantry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DA37528929DB453D003DDD8D /* Pantry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pantry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DA37528F29DB4620003DDD8D /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DA37529029DB4620003DDD8D /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DA37529129DB4620003DDD8D /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DA37529229DB4620003DDD8D /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DA37529329DB4620003DDD8D /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DA37529429DB4620003DDD8D /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,14 +114,68 @@
 		DA37524E29D67E46003DDD8D /* CoreDataProperties */ = {
 			isa = PBXGroup;
 			children = (
-				DA37525F29D88407003DDD8D /* Pantry+CoreDataClass.swift */,
-				DA37526029D88407003DDD8D /* Pantry+CoreDataProperties.swift */,
+				DA37529B29DB4628003DDD8D /* History+CoreData */,
+				DA37529C29DB463F003DDD8D /* Category+CoreData */,
+				DA37529D29DB4647003DDD8D /* Location+CoreData */,
+				DA37528C29DB4548003DDD8D /* Pantry+CoreData */,
+				DA37528D29DB455B003DDD8D /* ListItem+CoreDate */,
+				DA37528E29DB4572003DDD8D /* ListName+CoreDate */,
+			);
+			path = CoreDataProperties;
+			sourceTree = "<group>";
+		};
+		DA37528C29DB4548003DDD8D /* Pantry+CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DA37528829DB453D003DDD8D /* Pantry+CoreDataClass.swift */,
+				DA37528929DB453D003DDD8D /* Pantry+CoreDataProperties.swift */,
+			);
+			path = "Pantry+CoreData";
+			sourceTree = "<group>";
+		};
+		DA37528D29DB455B003DDD8D /* ListItem+CoreDate */ = {
+			isa = PBXGroup;
+			children = (
 				DA37524F29D67EB9003DDD8D /* ListItem+CoreDataClass.swift */,
 				DA37525029D67EB9003DDD8D /* ListItem+CoreDataProperties.swift */,
+			);
+			path = "ListItem+CoreDate";
+			sourceTree = "<group>";
+		};
+		DA37528E29DB4572003DDD8D /* ListName+CoreDate */ = {
+			isa = PBXGroup;
+			children = (
 				DA37525129D67EB9003DDD8D /* ListName+CoreDataClass.swift */,
 				DA37525229D67EB9003DDD8D /* ListName+CoreDataProperties.swift */,
 			);
-			path = CoreDataProperties;
+			path = "ListName+CoreDate";
+			sourceTree = "<group>";
+		};
+		DA37529B29DB4628003DDD8D /* History+CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DA37528F29DB4620003DDD8D /* History+CoreDataClass.swift */,
+				DA37529029DB4620003DDD8D /* History+CoreDataProperties.swift */,
+			);
+			path = "History+CoreData";
+			sourceTree = "<group>";
+		};
+		DA37529C29DB463F003DDD8D /* Category+CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DA37529129DB4620003DDD8D /* Category+CoreDataClass.swift */,
+				DA37529229DB4620003DDD8D /* Category+CoreDataProperties.swift */,
+			);
+			path = "Category+CoreData";
+			sourceTree = "<group>";
+		};
+		DA37529D29DB4647003DDD8D /* Location+CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DA37529329DB4620003DDD8D /* Location+CoreDataClass.swift */,
+				DA37529429DB4620003DDD8D /* Location+CoreDataProperties.swift */,
+			);
+			path = "Location+CoreData";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,12 +251,18 @@
 				DA37525429D67EB9003DDD8D /* ListItem+CoreDataProperties.swift in Sources */,
 				DA37525529D67EB9003DDD8D /* ListName+CoreDataClass.swift in Sources */,
 				DA37524229D67C1F003DDD8D /* CoreDataManager.swift in Sources */,
-				DA37526129D88407003DDD8D /* Pantry+CoreDataClass.swift in Sources */,
-				DA37526229D88407003DDD8D /* Pantry+CoreDataProperties.swift in Sources */,
+				DA37528B29DB453D003DDD8D /* Pantry+CoreDataProperties.swift in Sources */,
+				DA37529929DB4620003DDD8D /* Location+CoreDataClass.swift in Sources */,
+				DA37529529DB4620003DDD8D /* History+CoreDataClass.swift in Sources */,
 				DA37523F29D67BA0003DDD8D /* ShoppingListView.swift in Sources */,
 				DA37525629D67EB9003DDD8D /* ListName+CoreDataProperties.swift in Sources */,
+				DA37529829DB4620003DDD8D /* Category+CoreDataProperties.swift in Sources */,
+				DA37528A29DB453D003DDD8D /* Pantry+CoreDataClass.swift in Sources */,
 				DA37525329D67EB9003DDD8D /* ListItem+CoreDataClass.swift in Sources */,
+				DA37529729DB4620003DDD8D /* Category+CoreDataClass.swift in Sources */,
+				DA37529A29DB4620003DDD8D /* Location+CoreDataProperties.swift in Sources */,
 				DA37524529D67C55003DDD8D /* CoreDataModel.xcdatamodeld in Sources */,
+				DA37529629DB4620003DDD8D /* History+CoreDataProperties.swift in Sources */,
 				DA2383A829C21B6A0015F153 /* groceryCalculatorApp.swift in Sources */,
 				DA37525E29D7A1D8003DDD8D /* PantryView.swift in Sources */,
 			);
