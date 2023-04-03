@@ -139,6 +139,8 @@ class ListNameCoreDataVM: ObservableObject {
         newPantryItems.itemBrand = ""
         newPantryItems.category = "None"
         newPantryItems.location = "Unknown"
+        newPantryItems.storeName = "None"
+        newPantryItems.purchaseType = "None"
         newPantryItems.count = itemCount
         newPantryItems.cost = 0.0
         newPantryItems.stockedDate = Date()
